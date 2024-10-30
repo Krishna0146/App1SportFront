@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
     Box,
     Button,
@@ -40,13 +40,13 @@ const AddItemCard = () => {
 
     const handleSizeAdd = () => {
         if (sizeInput && !sizes.includes(sizeInput)) {
-            setSizes([...sizes, sizeInput]);
+            setSizes((prevSizes) => [...prevSizes, sizeInput]);
             setSizeInput('');
         }
     };
 
     const handleSizeRemove = (sizeToRemove) => {
-        setSizes(sizes.filter((size) => size !== sizeToRemove));
+        setSizes((prevSizes) => prevSizes.filter((size) => size !== sizeToRemove));
     };
 
     const handleSubmit = async (e) => {
@@ -71,6 +71,7 @@ const AddItemCard = () => {
             });
 
             setItems((prevItems) => [...prevItems, response.data]);
+            // Clear the form fields after submission
             setImageUrl('');
             setItemName('');
             setCategory('');
@@ -87,7 +88,7 @@ const AddItemCard = () => {
         }
     };
 
-    const fetchItems = async () => {
+    const fetchItems = useCallback(async () => {
         setLoading(true);
         setError('');
         try {
@@ -96,15 +97,15 @@ const AddItemCard = () => {
             });
             setItems(response.data);
         } catch (err) {
-            setError('');
+            setError('Failed to fetch items');
         } finally {
             setLoading(false);
         }
-    };
+    }, [shopName]);
 
     useEffect(() => {
         fetchItems();
-    }, []);
+    }, [fetchItems]);
 
     return (
         <Box maxWidth="600px" mx="auto" mt={8} p={4}>
@@ -200,7 +201,7 @@ const AddItemCard = () => {
                                     ))}
                                 </HStack>
                             </Box>
-                            <Button type="submit" colorScheme="blue" width="full">
+                            <Button type="submit" colorScheme="blue" width="full" isLoading={loading}>
                                 Add Item
                             </Button>
                         </Stack>

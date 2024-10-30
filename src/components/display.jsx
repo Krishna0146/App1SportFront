@@ -43,12 +43,12 @@ const DashBoard = () => {
         <div className="scrolling-images">
           <img
             src="https://images.pexels.com/photos/1661950/pexels-photo-1661950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Image 1"
+            alt="beautiful"
             className={`scroll-image ${currentIndex === 0 ? 'active' : ''}`}
           />
           <img
             src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Image 2"
+            alt="looking great"
             className={`scroll-image ${currentIndex === 1 ? 'active' : ''}`}
           />
         </div>
