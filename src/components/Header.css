@@ -1,0 +1,21 @@
+.nav-item {
+    position: relative;
+    margin: 0 20px; /* Spacing between items */
+  }
+  
+  .nav-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Adjust as needed */
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background: yellow; /* Color of the underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition */
+  }
+  
+  .nav-item:hover::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Align to the left */
+  }
+  

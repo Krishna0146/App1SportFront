@@ -1,0 +1,81 @@
+.body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 1000;
+  }
+  
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+  }
+  
+  .navbar .logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .navbar .menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .menu a .icon {
+    margin-right: 0.5rem;
+  }
+  
+  .navbar .menu a:hover {
+    text-decoration: underline;
+  }
+  
+  .content {
+    margin-top: 70px;
+    padding: 1rem;
+  }
+  
+  /* Scrolling Images Styles */
+  .scrolling-images {
+    position: relative;
+    width: 100%; /* Full width */
+    height: 400px; /* Fixed height */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .scroll-image {
+    position: absolute;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the container */
+    opacity: 0; /* Initially hide */
+    transition: opacity 0.5s ease-in-out; /* Fade transition */
+  }
+  
+  .scroll-image.active {
+    opacity: 1; /* Show active image */
+  }
+  

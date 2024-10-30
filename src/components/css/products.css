@@ -1,0 +1,115 @@
+.body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  margin-top: 70px;
+  padding: 1rem;
+}
+
+/* Scrolling Images Styles */
+.scrolling-images {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Fixed height */
+  overflow: hidden;
+}
+
+.scroll-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.scroll-image.active {
+  opacity: 1;
+}
+
+/* Category Cards Styles */
+.category-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Space between scrolling images and category cards */
+}
+
+.category-card {
+  position: relative;
+  width: calc(25% - 10px); /* 4 cards in a row */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.category-image {
+  width: 100%;
+  height: 200px; /* Fixed height for category images */
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.shop-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.shop-button:hover {
+  background-color: #2980b9;
+}
+
+/* Services Section */
+.services {
+  margin-top: 20px; /* Space above services */
+  text-align: center;
+}
+
+.services hr {
+  margin: 20px 0;
+}
